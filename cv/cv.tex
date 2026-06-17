@@ -1,0 +1,111 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1.6cm]{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+\definecolor{awsorange}{HTML}{D86613}
+\definecolor{ink}{HTML}{1A2230}
+\definecolor{grey}{HTML}{555F6E}
+
+\hypersetup{colorlinks=true, urlcolor=awsorange, linkcolor=awsorange}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% Section styling
+\titleformat{\section}{\large\bfseries\color{awsorange}}{}{0pt}{}[\vspace{-6pt}\color{awsorange}\rule{\linewidth}{1pt}]
+\titlespacing{\section}{0pt}{12pt}{8pt}
+
+\newcommand{\entry}[4]{%
+  \textbf{#1} \hfill \textbf{\color{grey}#2}\\
+  \textit{\color{awsorange}#3} \hfill \textit{\color{grey}#4}\\[2pt]
+}
+
+\begin{document}
+
+%==================== HEADER ====================
+\begin{center}
+  {\Huge \bfseries \color{ink} Patrick Thompson}\\[4pt]
+  {\large \color{awsorange} Cloud Engineer \textbar{} Infrastructure as Code \& Automation}\\[6pt]
+  \small
+  \href{mailto:pattson22@gmail.com}{pattson22@gmail.com} \quad
+  \href{https://github.com/pattson22}{github.com/pattson22} \quad
+  \href{https://linkedin.com/in/patrick-thompson-abb9a3367/}{LinkedIn} \quad
+  \href{https://pattson22.github.io}{pattson22.github.io}\\
+  Germany
+\end{center}
+
+%==================== SUMMARY ====================
+\section{Profile}
+Cloud Engineer and BSc Computer Science student specialising in Infrastructure
+as Code, automation, and resilient cloud-native architectures on AWS. AWS
+Certified Solutions Architect (Associate) with hands-on experience using
+Terraform, Docker, and CI/CD pipelines to provision and operate
+production-grade infrastructure. Background in operations and team leadership
+brings strong discipline around risk management, reliability, and clear
+documentation. Seeking a working student (Werkstudent) cloud engineering role
+in Germany.
+
+%==================== SKILLS ====================
+\section{Technical Skills}
+\begin{tabular}{@{}p{3.2cm}p{14cm}@{}}
+\textbf{Cloud / AWS} & EC2, VPC, IAM, S3, Lambda, ALB, Auto Scaling, RDS, CloudWatch, Route 53 \\[3pt]
+\textbf{IaC} & Terraform, infrastructure provisioning, state management \\[3pt]
+\textbf{Containers / CI/CD} & Docker, GitHub Actions, automated build/test/deploy pipelines \\[3pt]
+\textbf{Scripting} & Python (boto3), Bash, automation \& tooling \\[3pt]
+\textbf{Systems} & Linux administration, networking, security groups, OS fundamentals (C) \\[3pt]
+\textbf{Practices} & Security by default, high availability, monitoring, documentation \\
+\end{tabular}
+
+%==================== CERTIFICATIONS ====================
+\section{Certifications}
+\textbf{AWS Certified Solutions Architect -- Associate} \hfill \textbf{\color{grey}Active}\\
+\textit{\color{grey}Amazon Web Services}\\[4pt]
+\textbf{HashiCorp Terraform Associate} \hfill \textbf{\color{grey}In Progress}\\
+\textit{\color{grey}HashiCorp}
+
+%==================== PROJECTS ====================
+\section{Selected Projects}
+
+\entry{Multi-tier Cloud Application (CloudHub)}{Terraform, AWS, Docker, CI/CD}{Personal / Lab}{}
+\vspace{-6pt}
+\begin{itemize}[leftmargin=14pt, itemsep=1pt, topsep=2pt]
+  \item Provisioned a three-tier (web / app / database) AWS environment entirely with Terraform.
+  \item Containerised services with Docker; automated build, test and deploy with GitHub Actions.
+  \item Designed public/private subnets and least-privilege security groups.
+\end{itemize}
+
+\entry{Highly Available Crypto API}{Terraform, AWS, ALB, Auto Scaling}{Personal / Lab}{}
+\vspace{-6pt}
+\begin{itemize}[leftmargin=14pt, itemsep=1pt, topsep=2pt]
+  \item Deployed a resilient REST API across multiple Availability Zones behind an Application Load Balancer.
+  \item Used Auto Scaling for elasticity and IAM roles / secrets management to avoid hardcoded credentials.
+\end{itemize}
+
+\entry{MLOps API Infrastructure}{AWS, Docker, Python}{Personal / Lab}{}
+\vspace{-6pt}
+\begin{itemize}[leftmargin=14pt, itemsep=1pt, topsep=2pt]
+  \item Packaged and served a machine-learning model behind a REST endpoint with a reproducible, container-based workflow.
+\end{itemize}
+
+\entry{Simple Shell \& Low-Level Programming}{C, Linux}{ALX}{}
+\vspace{-6pt}
+\begin{itemize}[leftmargin=14pt, itemsep=1pt, topsep=2pt]
+  \item Built a Unix command-line interpreter in C: parsing, PATH resolution, fork/exec, built-ins.
+  \item Strengthened understanding of processes, system calls and Linux internals.
+\end{itemize}
+
+%==================== EDUCATION ====================
+\section{Education}
+\entry{BSc Computer Science}{Expected}{GISMA University of Applied Sciences}{Germany}
+
+%==================== FOOTER ====================
+\vfill
+\begin{center}
+  \small\color{grey} This CV was created using \LaTeX{} via Overleaf.
+\end{center}
+
+\end{document}

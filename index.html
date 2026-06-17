@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Patrick Thompson — Cloud Engineer. AWS, Terraform, Docker, CI/CD. Infrastructure as Code, automation, and resilient cloud architectures." />
+  <meta name="author" content="Patrick Thompson" />
+  <title>Patrick Thompson — Cloud Engineer</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
+  <div class="bg-noise" aria-hidden="true"></div>
+
+  <header class="nav" data-testid="navbar">
+    <a href="#hero" class="nav-brand" data-testid="nav-brand">
+      <span class="brand-mark">PT</span>
+      <span class="brand-text">patrick<span class="accent">.cloud</span></span>
+    </a>
+    <nav class="nav-links" data-testid="nav-links">
+      <a href="#about" data-testid="nav-about">About</a>
+      <a href="#certs" data-testid="nav-certs">Certifications</a>
+      <a href="#projects" data-testid="nav-projects">Projects</a>
+      <a href="#exercises" data-testid="nav-exercises">Exercises</a>
+      <a href="#contact" data-testid="nav-contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="cv/cv.pdf" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" data-testid="nav-resume-btn">
+        <i data-lucide="file-down"></i><span>Resume</span>
+      </a>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" data-testid="theme-toggle">
+        <i data-lucide="moon" class="icon-moon"></i>
+        <i data-lucide="sun" class="icon-sun"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero" data-testid="hero-section">
+      <div class="hero-inner">
+        <div class="hero-copy reveal">
+          <div class="pill" data-testid="hero-availability">
+            <span class="dot"></span> Open to Working Student roles · Germany
+          </div>
+          <h1 class="hero-title">
+            Patrick Thompson
+            <span class="hero-role">Cloud Engineer</span>
+          </h1>
+          <p class="hero-sub">
+            I design, automate, and operate resilient cloud infrastructure with
+            <strong>AWS</strong>, <strong>Terraform</strong>, <strong>Docker</strong> and
+            <strong>CI/CD</strong>. Infrastructure as Code, security by default, and
+            zero manual toil.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary" data-testid="hero-projects-btn">
+              <i data-lucide="layout-grid"></i><span>View Projects</span>
+            </a>
+            <a href="cv/cv.pdf" target="_blank" rel="noopener" class="btn btn-outline" data-testid="hero-resume-btn">
+              <i data-lucide="download"></i><span>Download Resume</span>
+            </a>
+          </div>
+          <div class="hero-stack" data-testid="hero-stack">
+            <span>AWS</span><span>Terraform</span><span>Docker</span>
+            <span>CI/CD</span><span>Linux</span><span>Python</span><span>Bash</span>
+          </div>
+        </div>
+
+        <div class="hero-card reveal" data-testid="hero-terminal">
+          <div class="term-bar">
+            <span class="term-dot red"></span>
+            <span class="term-dot amber"></span>
+            <span class="term-dot green"></span>
+            <span class="term-title">patrick@cloud:~</span>
+          </div>
+          <pre class="term-body"><span class="t-prompt">$</span> whoami
+<span class="t-out">cloud_engineer --focus="IaC, automation, reliability"</span>
+<span class="t-prompt">$</span> terraform apply
+<span class="t-ok">Apply complete!</span> Resources: <span class="t-num">14</span> added, <span class="t-num">0</span> changed.
+<span class="t-prompt">$</span> aws sts get-caller-identity
+<span class="t-out">arn:aws:iam::****:user/patrick</span>
+<span class="t-prompt">$</span> ./deploy.sh --env prod
+<span class="t-ok">✓</span> build  <span class="t-ok">✓</span> test  <span class="t-ok">✓</span> push  <span class="t-ok">✓</span> deploy
+<span class="t-prompt">$</span> <span class="cursor">_</span></pre>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section" data-testid="about-section">
+      <div class="section-head reveal">
+        <span class="kicker">01 — About</span>
+        <h2>From operations leadership to cloud automation</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            I'm Patrick, a Cloud Engineer and BSc Computer Science student at
+            <strong>GISMA University of Applied Sciences</strong>. I specialise in
+            building and operating <strong>cloud-native architectures</strong> on AWS,
+            using Infrastructure as Code with Terraform to make environments
+            reproducible, auditable, and fast to ship.
+          </p>
+          <p>
+            My engineering principle is simple: automate everything that repeats.
+            I lean on <strong>CI/CD pipelines</strong> to remove manual toil, design with
+            <strong>security and reliability</strong> in mind, and instrument systems so
+            problems surface before users notice them.
+          </p>
+          <p>
+            I came into tech from a background in operations and team leadership,
+            which left me with strong instincts for <strong>risk management, process
+            discipline, and clear documentation</strong> — habits that translate directly
+            into running production infrastructure responsibly.
+          </p>
+          <a href="#contact" class="link-arrow" data-testid="about-contact-link">
+            Let's talk <i data-lucide="arrow-right"></i>
+          </a>
+        </div>
+        <aside class="about-facts reveal" data-testid="about-facts">
+          <div class="fact"><i data-lucide="graduation-cap"></i><div><strong>BSc Computer Science</strong><span>GISMA University of Applied Sciences</span></div></div>
+          <div class="fact"><i data-lucide="cloud"></i><div><strong>AWS Solutions Architect</strong><span>Associate — Active</span></div></div>
+          <div class="fact"><i data-lucide="map-pin"></i><div><strong>Based in Germany</strong><span>Open to Werkstudent roles</span></div></div>
+          <div class="fact"><i data-lucide="terminal"></i><div><strong>Focus</strong><span>IaC · Automation · Observability</span></div></div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="certs" class="section" data-testid="certs-section">
+      <div class="section-head reveal">
+        <span class="kicker">02 — Certifications</span>
+        <h2>Validated cloud expertise</h2>
+      </div>
+      <div class="cert-grid">
+        <article class="cert-card reveal" data-testid="cert-aws-saa">
+          <div class="cert-badge"><i data-lucide="award"></i></div>
+          <div class="cert-body">
+            <div class="cert-row">
+              <h3>AWS Certified Solutions Architect – Associate</h3>
+              <span class="status-chip">Active</span>
+            </div>
+            <p class="cert-issuer">Amazon Web Services</p>
+            <p>Validates the ability to design and deploy scalable, highly available, and fault-tolerant systems on AWS.</p>
+          </div>
+        </article>
+        <article class="cert-card cert-soon reveal" data-testid="cert-terraform">
+          <div class="cert-badge"><i data-lucide="hourglass"></i></div>
+          <div class="cert-body">
+            <div class="cert-row">
+              <h3>HashiCorp Terraform Associate</h3>
+              <span class="status-chip chip-muted">In Progress</span>
+            </div>
+            <p class="cert-issuer">HashiCorp</p>
+            <p>Currently studying toward validating Infrastructure as Code fundamentals and Terraform workflows.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects" class="section" data-testid="projects-section">
+      <div class="section-head reveal">
+        <span class="kicker">03 — Featured Projects</span>
+        <h2>Selected, curated, and explained</h2>
+        <p class="section-lead">Five projects ordered by relevance to cloud engineering roles — each one showing how I build, automate, and document infrastructure.</p>
+      </div>
+
+      <div class="proj-grid" id="featuredGrid" data-testid="featured-projects-grid">
+        <article class="project-card featured-lg reveal" data-testid="project-cloudhub">
+          <div class="proj-top">
+            <span class="proj-index">01</span>
+            <span class="proj-flag"><i data-lucide="star"></i> Flagship</span>
+          </div>
+          <h3>Multi-tier Cloud Application (CloudHub)</h3>
+          <p>Designed and deployed a three-tier web application on AWS, provisioned entirely with Terraform. The architecture separates web, application, and database tiers across public and private subnets, with security groups enforcing least-privilege traffic. Docker containerises each service, and GitHub Actions runs the build, test, and deploy pipeline on every push.</p>
+          <div class="proj-arch">
+            <img src="assets/multi-tier-architecture.svg" alt="Multi-tier cloud architecture diagram" loading="lazy" data-testid="cloudhub-architecture" />
+          </div>
+          <div class="tags">
+            <span>Terraform</span><span>AWS</span><span>Docker</span><span>GitHub Actions</span><span>CI/CD</span><span>VPC</span>
+          </div>
+          <p class="proj-learn"><i data-lucide="lightbulb"></i> <strong>What I learned:</strong> how to model an entire environment as code so it can be torn down and rebuilt identically in minutes.</p>
+          <a class="proj-link" href="https://github.com/Pattson22/CloudHub" target="_blank" rel="noopener" data-testid="cloudhub-link">View on GitHub <i data-lucide="arrow-up-right"></i></a>
+        </article>
+
+        <article class="project-card featured-lg reveal" data-testid="project-crypto-api">
+          <div class="proj-top">
+            <span class="proj-index">02</span>
+            <span class="proj-flag flag-blue"><i data-lucide="shield-check"></i> High Availability</span>
+          </div>
+          <h3>Highly Available Crypto API</h3>
+          <p>Built a resilient cryptocurrency price API on AWS, provisioned with Terraform and fronted by an Application Load Balancer spreading traffic across multiple Availability Zones. Auto Scaling keeps the service healthy under load, while IAM roles and secrets management keep credentials out of the codebase.</p>
+          <div class="proj-arch">
+            <img src="assets/crypto-api-architecture.svg" alt="Highly available Crypto API architecture diagram" loading="lazy" data-testid="crypto-architecture" />
+          </div>
+          <div class="tags">
+            <span>Terraform</span><span>AWS</span><span>ALB</span><span>Auto Scaling</span><span>IAM</span><span>Multi-AZ</span>
+          </div>
+          <p class="proj-learn"><i data-lucide="lightbulb"></i> <strong>What I learned:</strong> how to design for failure so the service survives the loss of an entire Availability Zone.</p>
+          <a class="proj-link" href="https://github.com/Pattson22" target="_blank" rel="noopener" data-testid="crypto-link">View on GitHub <i data-lucide="arrow-up-right"></i></a>
+        </article>
+
+        <article class="project-card reveal" data-testid="project-mlops">
+          <div class="proj-top"><span class="proj-index">03</span></div>
+          <h3>MLOps API Infrastructure</h3>
+          <p>Deployed a machine-learning inference API with reproducible infrastructure and a container-based workflow. The project demonstrates how a trained model is packaged, served behind a REST endpoint, and shipped through an automated pipeline.</p>
+          <div class="tags"><span>AWS</span><span>Docker</span><span>Python</span><span>MLOps</span><span>REST API</span></div>
+          <p class="proj-learn"><i data-lucide="lightbulb"></i> <strong>What I learned:</strong> bridging the gap between data science artefacts and production-grade deployment.</p>
+          <a class="proj-link" href="https://github.com/Pattson22" target="_blank" rel="noopener" data-testid="mlops-link">View on GitHub <i data-lucide="arrow-up-right"></i></a>
+        </article>
+
+        <article class="project-card reveal" data-testid="project-group-chat">
+          <div class="proj-top"><span class="proj-index">04</span></div>
+          <h3>Group Chat Application</h3>
+          <p>A full-stack real-time group chat application showing my application-development skills beyond pure infrastructure — handling concurrent users, message state, and a clean client/server architecture.</p>
+          <div class="tags"><span>Python</span><span>WebSockets</span><span>Full-stack</span><span>Sockets</span></div>
+          <p class="proj-learn"><i data-lucide="lightbulb"></i> <strong>What I learned:</strong> managing concurrency and real-time state across many connected clients.</p>
+          <a class="proj-link" href="https://github.com/Pattson22/group-chat-app" target="_blank" rel="noopener" data-testid="group-chat-link">View on GitHub <i data-lucide="arrow-up-right"></i></a>
+        </article>
+
+        <article class="project-card reveal" data-testid="project-simple-shell">
+          <div class="proj-top"><span class="proj-index">05</span></div>
+          <h3>Simple Shell (C)</h3>
+          <p>A Unix command-line interpreter written from scratch in C. Implements command parsing, the PATH lookup, process creation with fork/exec, built-ins, and environment handling — a deep dive into how Linux actually runs programs.</p>
+          <div class="tags"><span>C</span><span>Linux</span><span>OS Internals</span><span>Systems</span></div>
+          <p class="proj-learn"><i data-lucide="lightbulb"></i> <strong>What I learned:</strong> the mechanics of processes, system calls, and the shell that ties Linux together.</p>
+          <a class="proj-link" href="https://github.com/Pattson22/simple_shell" target="_blank" rel="noopener" data-testid="simple-shell-link">View on GitHub <i data-lucide="arrow-up-right"></i></a>
+        </article>
+      </div>
+
+      <div class="section-subhead reveal">
+        <h3><i data-lucide="github"></i> Live from GitHub</h3>
+        <p>Pulled automatically from my public repositories so this section never goes stale.</p>
+      </div>
+      <div class="repo-grid" id="repoGrid" data-testid="github-repos-grid">
+        <div class="repo-loading" data-testid="repos-loading">
+          <span class="spinner"></span> Fetching latest repositories…
+        </div>
+      </div>
+    </section>
+
+    <section id="exercises" class="section" data-testid="exercises-section">
+      <div class="section-head reveal">
+        <span class="kicker">04 — Technical Exercises</span>
+        <h2>Fundamentals, demonstrated</h2>
+        <p class="section-lead">Small, focused demonstrations of the everyday skills cloud teams rely on — automation, scripting against AWS, and networking.</p>
+      </div>
+      <div class="exercise-grid">
+        <article class="exercise-card reveal" data-testid="exercise-bash">
+          <div class="ex-icon"><i data-lucide="square-terminal"></i></div>
+          <h3>Bash Automation</h3>
+          <p>A server bootstrap and health-check script — package setup, log rotation, disk and service checks, with clear logging and exit codes.</p>
+          <div class="tags"><span>Bash</span><span>Linux</span><span>Automation</span></div>
+          <a class="proj-link" href="exercises/bash-automation/README.md" target="_blank" rel="noopener" data-testid="exercise-bash-link">Read the exercise <i data-lucide="arrow-up-right"></i></a>
+        </article>
+        <article class="exercise-card reveal" data-testid="exercise-python">
+          <div class="ex-icon"><i data-lucide="file-code-2"></i></div>
+          <h3>Python + AWS (boto3)</h3>
+          <p>A boto3 script that audits an AWS account — listing EC2 instances and flagging S3 buckets without encryption or that are publicly accessible.</p>
+          <div class="tags"><span>Python</span><span>boto3</span><span>AWS</span><span>Security</span></div>
+          <a class="proj-link" href="exercises/python-aws/README.md" target="_blank" rel="noopener" data-testid="exercise-python-link">Read the exercise <i data-lucide="arrow-up-right"></i></a>
+        </article>
+        <article class="exercise-card reveal" data-testid="exercise-networking">
+          <div class="ex-icon"><i data-lucide="network"></i></div>
+          <h3>Networking & Linux</h3>
+          <p>A documented walkthrough of building a VPC: public/private subnets, route tables, an internet and NAT gateway, and least-privilege security groups.</p>
+          <div class="tags"><span>VPC</span><span>Subnets</span><span>Security Groups</span><span>Networking</span></div>
+          <a class="proj-link" href="exercises/networking/vpc-setup.md" target="_blank" rel="noopener" data-testid="exercise-networking-link">Read the exercise <i data-lucide="arrow-up-right"></i></a>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact" data-testid="contact-section">
+      <div class="contact-card reveal">
+        <span class="kicker">05 — Contact</span>
+        <h2>Let's build something reliable</h2>
+        <p>I'm actively looking for a working student cloud engineering role in Germany. Whether it's about infrastructure, automation, or a potential collaboration — I'd love to hear from you.</p>
+        <div class="contact-links">
+          <a class="contact-btn" href="mailto:pattson22@gmail.com" data-testid="contact-email"><i data-lucide="mail"></i> pattson22@gmail.com</a>
+          <a class="contact-btn" href="https://github.com/pattson22" target="_blank" rel="noopener" data-testid="contact-github"><i data-lucide="github"></i> github.com/pattson22</a>
+          <a class="contact-btn" href="https://linkedin.com/in/patrick-thompson-abb9a3367/" target="_blank" rel="noopener" data-testid="contact-linkedin"><i data-lucide="linkedin"></i> LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" data-testid="footer">
+    <p>© <span id="year"></span> Patrick Thompson — Cloud Engineer.</p>
+    <p class="footer-note">Built with HTML, CSS &amp; JavaScript · Hosted on GitHub Pages · B201 @ GISMA</p>
+  </footer>
+
+  <a href="#hero" class="to-top" id="toTop" aria-label="Back to top" data-testid="back-to-top"><i data-lucide="arrow-up"></i></a>
+
+  <script src="script.js"></script>
+</body>
+</html>
