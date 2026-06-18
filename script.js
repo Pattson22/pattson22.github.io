@@ -162,6 +162,34 @@
       console.warn("GitHub fetch failed:", err);
     });
 
+  /* ---------- Contact form ---------- */
+  const contactForm = document.getElementById("contactForm");
+  const contactNote = document.getElementById("contactFormNote");
+  if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("cf-name").value.trim();
+      const email = document.getElementById("cf-email").value.trim();
+      const message = document.getElementById("cf-message").value.trim();
+      if (!name || !email || !message) {
+        contactNote.textContent = "Please fill in all fields.";
+        contactNote.classList.add("error");
+        return;
+      }
+      const subject = "Portfolio contact from " + name;
+      const body = message + "\n\n— " + name + " (" + email + ")";
+      const mailto =
+        "mailto:pattson22@gmail.com?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        encodeURIComponent(body);
+      window.location.href = mailto;
+      contactNote.classList.remove("error");
+      contactNote.textContent = "Opening your email client…";
+      contactForm.reset();
+    });
+  }
+
   /* ---------- Render icons ---------- */
   window.addEventListener("load", function () {
     window.lucide && window.lucide.createIcons();

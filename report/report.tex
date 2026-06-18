@@ -1,270 +1,137 @@
-\documentclass[12pt, a4paper]{article}
+% !TEX program = pdflatex
+\documentclass[11pt,a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[margin=2.5cm]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{geometry}
+\geometry{margin=25mm}
 \usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  urlcolor=blue,
+  pdftitle={Computer Science Portfolio: Design, Implementation, and Reflection},
+  pdfauthor={Patrick Thompson}
+}
 \usepackage{graphicx}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{booktabs}
 \usepackage{enumitem}
-\usepackage{setspace}
-\usepackage{xcolor}
-\definecolor{awsorange}{HTML}{D86613}
-\hypersetup{colorlinks=true, urlcolor=awsorange, linkcolor=black, citecolor=awsorange}
-\onehalfspacing
+\usepackage{parskip}
+\setlength{\parskip}{6pt}
+\setlength{\parindent}{0pt}
 
-\title{\textbf{Computer Science Portfolio:\\ Design, Implementation, and Reflection}}
-\author{Patrick Thompson \\ Student ID: GH1057420 \\
-B201 Computer Science Lab \\ GISMA University of Applied Sciences}
-\date{\today}
+\title{\textbf{Computer Science Portfolio: Design, Implementation, and Reflection}}
+\author{Patrick Thompson \\ Student ID: GH1057420 \\ B201 Computer Science Lab \\ GISMA University of Applied Sciences}
+\date{June 17, 2026}
 
 \begin{document}
+
 \maketitle
-\newpage
+\begin{center}
+  \small
+  Live portfolio: \href{https://pattson22.github.io}{pattson22.github.io} \\
+  Repository: \href{https://github.com/pattson22/pattson22.github.io}{github.com/pattson22/pattson22.github.io}
+\end{center}
+
 \tableofcontents
-\newpage
+\bigskip
 
-%=====================================================================
+
+
+
 \section{Introduction}
-%=====================================================================
-This report documents the design and development of my computer science
-portfolio, created as part of the B201 Computer Science Lab module at GISMA
-University of Applied Sciences. The portfolio is a personal website, hosted on
-GitHub Pages, that presents my skills, projects, and credentials to a specific
-audience: hiring managers recruiting for working student (Werkstudent) cloud
-engineering positions in Germany.
+This report documents the design and development of my computer science portfolio, created as part of the B201 Computer Science Lab module at GISMA University of Applied Sciences. The portfolio is a personal website, hosted on GitHub Pages, that presents my skills, projects, and credentials to a specific audience: hiring managers recruiting for working student (Werkstudent) cloud engineering positions in Germany.
 
-I chose that audience deliberately because it shaped every decision I made.
-When I looked through real job listings on platforms such as Hays and
-StepStone (Hays, 2024), the same requirements appeared again and again: AWS,
-Terraform or other Infrastructure as Code tooling, Docker, CI/CD pipelines,
-Linux fundamentals, and a candidate who can document and explain what they have
-built. A portfolio aimed at that market therefore cannot simply list
-technologies. It has to prove, with evidence, that I can build, automate,
-secure, monitor, and clearly communicate cloud infrastructure.
+I chose that audience deliberately because it shaped every decision I made. When I looked through real job listings on platforms such as Hays and StepStone, the same requirements appeared again and again: AWS, Terraform or other Infrastructure as Code tooling, Docker, CI/CD pipelines, Linux fundamentals, and a candidate who can document and explain what they have built. A portfolio aimed at that market therefore cannot simply list technologies. It has to prove, with evidence, that I can build, automate, secure, monitor, and clearly communicate cloud infrastructure.
 
-The live portfolio is available at
-\href{https://pattson22.github.io}{pattson22.github.io}, and the source code,
-along with my CV, technical exercises, and this report, lives in the GitHub
-repository at
-\href{https://github.com/pattson22/pattson22.github.io}{github.com/pattson22/pattson22.github.io}.
-
-This report covers the full project. I begin by describing the structure of
-both the website and the repository, and I justify the design decisions behind
-them. I then explain the tools and technologies I used and why I selected each
-one. After that I describe the portfolio's content, including my five featured
-projects and three technical exercises. The most important part, for me, is the
-critical evaluation, where I assess honestly what works well and what does not.
-I close with a set of concrete future improvements and a short reflection on
-what the project taught me and how it prepares me for a role in industry.
-
-%=====================================================================
 \section{Portfolio Design and Structure}
-%=====================================================================
 
 \subsection{Website Structure}
-The website is a single-page application divided into clearly labelled
-sections that a visitor scrolls through in a deliberate order: a hero
-introduction, an ``About'' section, certifications, featured projects, a live
-GitHub feed, technical exercises, and contact details. I designed the order
-around how a busy recruiter actually reads a portfolio.
-
-The hero section states who I am and what I do in one glance, with a short
-animated terminal that signals my comfort in a command-line, infrastructure
-context. The ``About'' section then gives the human story and frames my
-transition from operations leadership into cloud engineering. Certifications
-come next, because a verified AWS Solutions Architect credential is an
-immediate trust signal for a cloud role. Only then do I present the projects,
-which are the core evidence. I placed the curated ``Featured Projects'' above
-the dynamic GitHub feed on purpose: the curated cards tell the reader exactly
-what I built and why it matters, while the live feed proves the work is real
-and ongoing. The technical exercises follow, reassuring an employer about the
-fundamentals, and the contact section closes with a clear call to action.
+The website is a single-page application divided into clearly labelled sections that a visitor scrolls through in a deliberate order: a hero introduction, an ``About'' section, certifications, featured projects, a live GitHub feed, technical exercises, and contact details. The hero section states who I am and what I do in one glance, with a short animated terminal that signals my comfort in a command-line, infrastructure context.
 
 \subsection{GitHub Repository Structure}
-The repository is organised so that anyone can navigate it without
-explanation. The website files (\texttt{index.html}, \texttt{style.css},
-\texttt{script.js}) sit at the root, as GitHub Pages expects. Supporting
-material is grouped into purpose-named folders: \texttt{/assets} for images and
-architecture diagrams, \texttt{/cv} for my LaTeX CV and its compiled PDF,
-\texttt{/exercises} for the three technical demonstrations (each in its own
-subfolder with a script and a README), and \texttt{/report} for this document.
-A single top-level \texttt{README.md} ties everything together.
-
-I organised it this way because repository structure is itself a piece of
-evidence. A cloud engineer spends a large part of their day reading and writing
-documentation and keeping infrastructure code tidy, so a clean, predictable
-layout demonstrates exactly the discipline the role demands. Each exercise
-folder carrying its own README mirrors how real infrastructure repositories are
-documented module by module.
+The repository is organised so that anyone can navigate it without explanation. The website files (\texttt{index.html}, \texttt{style.css}, \texttt{script.js}) sit at the root, as GitHub Pages expects. Supporting material is grouped into purpose-named folders: \texttt{/assets} for images and architecture diagrams, \texttt{/cv} for LaTeX CV and compiled PDF, \texttt{/exercises} for the three technical demonstrations, and \texttt{/report} for this document. A single top-level \texttt{README.md} ties everything together.
 
 \subsection{Design Decisions}
-Several decisions defined the final result, and each was a trade-off I made
-consciously.
+I chose a single-page layout because recruiters typically spend very little time on any one portfolio. A single, scannable page removes navigation friction and lets a reader reach the projects in seconds. I added a dark and light mode toggle for accessibility and personal preference; the choice is saved to \texttt{localStorage}. I selected an AWS-orange accent colour deliberately to visually tie the site to the cloud platform I specialise in. I hosted on GitHub Pages because it is free and integrates directly with the repository.
 
-I chose a \textbf{single-page layout} because recruiters typically spend very
-little time on any one portfolio. A single, scannable page removes navigation
-friction and lets a reader reach the projects in seconds. I added a
-\textbf{dark and light mode toggle} for accessibility and personal preference;
-the choice is saved to \texttt{localStorage} so a returning visitor keeps their
-setting. I selected an \textbf{AWS-orange accent colour} deliberately, because
-it visually ties the whole site to the cloud platform I specialise in and
-reinforces my positioning the moment the page loads. I hosted on
-\textbf{GitHub Pages} because it is free, integrates directly with the
-repository that already holds my code, and is an industry-standard way for
-developers to publish a portfolio. Finally, I built the site to be fully
-\textbf{responsive}, since a hiring manager may well open it on a phone, and a
-layout that breaks on mobile would undermine the very competence I am trying to
-demonstrate.
-
-%=====================================================================
 \section{Tools and Technologies}
-%=====================================================================
-I kept the technology stack deliberately lean, choosing tools that match the
-job rather than the most fashionable option.
+I kept the technology stack deliberately lean, choosing tools that match the job rather than the most fashionable option.
 
-\textbf{HTML5} provides the semantic structure of the site; I used meaningful
-elements and section landmarks so the page is accessible and easy to read.
-\textbf{CSS3} handles all styling, and I leaned on CSS custom properties
-(variables) to implement theming cleanly, so the dark/light switch only has to
-swap a small set of values. I used Flexbox and CSS Grid for layout because they
-make responsive design straightforward without a framework.
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Frontend:} HTML5, CSS3 (custom properties, Flexbox, Grid), vanilla JavaScript.
+  \item \textbf{Hosting and VCS:} Git, GitHub, GitHub Pages.
+  \item \textbf{Documentation and CV:} LaTeX (Overleaf).
+  \item \textbf{Diagrams:} draw.io (diagrams.net).
+\end{itemize}
 
-\textbf{JavaScript} powers the interactive behaviour: it toggles and persists
-the theme, animates sections into view as the user scrolls, and fetches my
-public repositories from the GitHub REST API so the ``Live from GitHub''
-section stays current without any manual editing. I chose vanilla JavaScript
-rather than a framework because the site is small, and avoiding a build step
-keeps it fast and easy to host directly on GitHub Pages.
-
-\textbf{LaTeX, via Overleaf}, produced both my CV and this report. I chose
-LaTeX because it gives precise, professional, and consistent typesetting, and
-Overleaf removes any local installation overhead. \textbf{Git and GitHub}
-provide version control and hosting; using them is not just convenient but is
-itself evidence of a core professional skill. Finally, I used
-\textbf{draw.io} to create the architecture diagrams for my two flagship cloud
-projects, because a clear diagram communicates a system design far faster than
-a paragraph of prose.
-
-%=====================================================================
 \section{Portfolio Content}
-%=====================================================================
 
 \subsection{Featured Projects}
-I curated five projects and ordered them by how directly they map onto German
-cloud engineering requirements. My flagship is the \textbf{Multi-tier Cloud
-Application}, a three-tier AWS environment provisioned with Terraform,
-containerised with Docker, and deployed through a GitHub Actions pipeline. I
-lead with it because end-to-end cloud deployment is the single capability
-employers ask for most. Second is the \textbf{Highly Available Crypto API},
-which demonstrates designing for failure across multiple Availability Zones
-with an Application Load Balancer and Auto Scaling. Third, the \textbf{MLOps API
-Infrastructure} shows I can deploy and serve applications in a reproducible,
-containerised way. Fourth, the \textbf{Group Chat Application} broadens the
-picture to full-stack development and real-time concurrency. Fifth, the
-\textbf{Simple Shell} written in C proves low-level Linux and operating-system
-understanding, which underpins everything that runs in the cloud.
+I curated five projects and ordered them by how directly they map onto German cloud engineering requirements.
 
-Each project card describes what the system does, lists its technology stack,
-links to the source on GitHub, and states one concrete thing I learned. For the
-two cloud projects I also drew architecture diagrams, because being able to
-visualise and explain a system is a differentiator that many junior portfolios
-lack.
+\begin{enumerate}
+  \item \textbf{Multi-tier Cloud Application} --- three-tier AWS environment provisioned with Terraform, containerised with Docker, deployed via GitHub Actions.
+  \item \textbf{Highly Available Crypto API} --- multi-AZ design with ALB and Auto Scaling.
+  \item \textbf{MLOps API Infrastructure} --- reproducible containerised deployment for ML serving.
+  \item \textbf{Group Chat Application} --- full-stack real-time concurrency.
+  \item \textbf{Simple Shell (C)} --- low-level Linux and OS understanding.
+\end{enumerate}
+
+For the cloud projects include architecture diagrams in \texttt{/assets} and reference them here:
+\begin{figure}[H]
+  \centering
+  % \includegraphics[width=0.8\textwidth]{assets/multitier-architecture.png}
+  \caption{Multi-tier Cloud Application architecture (place diagram in \texttt{/assets}).}
+\end{figure}
 
 \subsection{Technical Exercises}
-Alongside the larger projects I added three small, focused exercises that
-target the fundamentals German employers test for. The first is a
-\textbf{Bash automation script} that idempotently bootstraps a server and runs
-health checks, returning a non-zero exit code on failure so it can be used in
-automation. The second is a \textbf{Python script using boto3} that audits an
-AWS account, flagging S3 buckets that are unencrypted or publicly accessible.
-The third is a \textbf{networking walkthrough} documenting how I build a VPC
-with public and private subnets, routing, gateways, and least-privilege
-security groups. Together these prove I am comfortable with scripting, the AWS
-SDK, security awareness, and core networking, not only with higher-level
-tooling.
+\begin{itemize}[leftmargin=*]
+  \item \textbf{Bash automation script} --- idempotent server bootstrap and health checks.
+  \item \textbf{Python boto3 auditor} --- flags unencrypted or public S3 buckets.
+  \item \textbf{Networking walkthrough} --- VPC with public/private subnets, routing, gateways, and least-privilege security groups.
+\end{itemize}
 
 \subsection{Curriculum Vitae}
-My CV was written in LaTeX and is available from the portfolio as a downloadable
-PDF, with both the source and the compiled file kept in the repository. It
-highlights my AWS certification, my Infrastructure as Code and CI/CD
-experience, and the same projects shown on the site, so the website and the CV
-tell one consistent story.
+My CV is written in LaTeX and available as a downloadable PDF in \texttt{/cv}. The CV highlights AWS certification, Infrastructure as Code, CI/CD experience, and the same projects shown on the site.
 
-%=====================================================================
 \section{Critical Evaluation}
-%=====================================================================
 
 \subsection{Strengths}
-The portfolio has clear strengths. The \textbf{dynamic GitHub integration}
-means the live projects section updates itself whenever I push new work, so the
-site never becomes stale without my attention. The \textbf{design is clean and
-fully responsive}, working consistently across desktop and mobile, which
-matters because I cannot control the device a recruiter uses. The
-\textbf{cloud-focused branding} is deliberate and coherent: the AWS-orange
-accent, the terminal motif, and the project selection all signal the same
-target role, so there is no ambiguity about what I do. The \textbf{repository is
-well organised and documented}, which is itself evidence of the operational
-discipline a cloud team needs. Finally, the \textbf{architecture diagrams}
-demonstrate system thinking and the ability to communicate a design, not just
-to write code.
+The portfolio's dynamic GitHub integration keeps the projects section current. The design is clean and fully responsive. The cloud-focused branding (AWS-orange accent, terminal motif) and repository organisation demonstrate operational discipline and system thinking.
 
 \subsection{Weaknesses}
-Being honest about the gaps matters more than listing strengths, and there are
-several. The site has \textbf{limited interactivity}: there is no contact form,
-so a visitor has to switch to email rather than reaching me in place. The
-\textbf{project descriptions, while specific, could go deeper}; a full case
-study for each one, with the problems I hit and how I solved them, would be more
-persuasive than a paragraph. I currently display \textbf{only one
-certification}, which understates ongoing learning. There is \textbf{no blog or
-technical writing section}, which is a missed opportunity to show
-communication skill and depth. The site has \textbf{no visitor analytics}, so I
-cannot tell whether anyone engages with it or where they drop off. And although
-I am targeting the German market, the portfolio exists \textbf{only in English};
-a German-language version would widen its reach and signal commitment to working
-in Germany. I see these not as failures but as a concrete, prioritised backlog.
+Current limitations include: no contact form, project descriptions that could be deeper, only one displayed certification, no blog or technical writing, no visitor analytics, and the site is English-only (no German translation).
 
-%=====================================================================
 \section{Future Improvements}
-%=====================================================================
-Several improvements follow directly from that evaluation. In the near term I
-would \textbf{add a working contact form} so visitors can reach me without
-leaving the page, and \textbf{integrate lightweight visitor analytics} to learn
-which sections hold attention. I plan to \textbf{add further certifications},
-beginning with the HashiCorp Terraform Associate and later an AWS Developer
-credential, to show momentum. To demonstrate communication depth I would
-\textbf{start a short technical blog} documenting things I have built and
-problems I have solved. I would also \textbf{expand the projects into detailed
-case study pages} with screenshots and decision logs, and \textbf{add a German
-language toggle} to better serve the local market. Taken together these turn a
-strong static portfolio into a living, growing professional presence.
-
-%=====================================================================
-\section{Conclusion}
-%=====================================================================
-Building this portfolio taught me that presenting technical work well is a
-discipline in its own right. The hardest part was not the code but the editing:
-deciding what to show, in what order, and how to explain it so that a busy
-reader immediately understands my value. Working through the design,
-documentation, and writing made me far more deliberate about how I communicate
-engineering decisions. The result is a focused, honest, and well-organised
-portfolio that demonstrates the exact skills a working student cloud engineering
-role in Germany demands, and the critical evaluation gives me a clear roadmap
-for improving it further. More than a coursework deliverable, it is a
-professional asset I will keep developing as I move into industry.
-
-\newpage
-%=====================================================================
-\section*{References}
-%=====================================================================
-\addcontentsline{toc}{section}{References}
+Planned improvements:
 \begin{itemize}[leftmargin=*]
-  \item Amazon Web Services (2024) \textit{AWS Well-Architected Framework}. Available at: \url{https://aws.amazon.com/architecture/well-architected/} (Accessed: 17 June 2026).
-  \item GitHub (2024) \textit{GitHub Pages Documentation}. Available at: \url{https://docs.github.com/en/pages} (Accessed: 17 June 2026).
-  \item Hays (2024) \textit{IT \& Cloud Engineering Jobs in Germany}. Available at: \url{https://www.hays.de/en/jobs/it} (Accessed: 17 June 2026).
-  \item HashiCorp (2024) \textit{Terraform Documentation}. Available at: \url{https://developer.hashicorp.com/terraform/docs} (Accessed: 17 June 2026).
-  \item JGraph (2024) \textit{draw.io (diagrams.net) Documentation}. Available at: \url{https://www.drawio.com/doc/} (Accessed: 17 June 2026).
-  \item Mozilla (2024) \textit{MDN Web Docs: HTML, CSS and JavaScript references}. Available at: \url{https://developer.mozilla.org/} (Accessed: 17 June 2026).
-  \item Overleaf (2024) \textit{Documentation and Learn LaTeX}. Available at: \url{https://www.overleaf.com/learn} (Accessed: 17 June 2026).
-  \item StepStone (2024) \textit{Cloud Engineer Werkstudent positions, Germany}. Available at: \url{https://www.stepstone.de/} (Accessed: 17 June 2026).
+  \item Add a working contact form and lightweight visitor analytics.
+  \item Add further certifications (HashiCorp Terraform Associate, AWS Developer).
+  \item Start a short technical blog and expand projects into detailed case studies.
+  \item Add a German language toggle.
+\end{itemize}
+
+\section{Conclusion}
+Building this portfolio taught me that presenting technical work well is a discipline in its own right. The result is a focused, honest, and well-organised portfolio that demonstrates the skills a working student cloud engineering role in Germany demands.
+
+\bigskip
+\hrule
+\bigskip
+
+\section*{References}
+\begin{itemize}[leftmargin=*]
+  \item Amazon Web Services (2024) \textit{AWS Well-Architected Framework}. Available at: \url{https://aws.amazon.com/architecture/well-architected/}.
+  \item GitHub (2024) \textit{GitHub Pages Documentation}. Available at: \url{https://docs.github.com/en/pages}.
+  \item Hays (2024) \textit{IT \& Cloud Engineering Jobs in Germany}. Available at: \url{https://www.hays.de/en/jobs/it}.
+  \item HashiCorp (2024) \textit{Terraform Documentation}. Available at: \url{https://developer.hashicorp.com/terraform/docs}.
+  \item JGraph (2024) \textit{draw.io Documentation}. Available at: \url{https://www.drawio.com/doc/}.
+  \item Mozilla (2024) \textit{MDN Web Docs}. Available at: \url{https://developer.mozilla.org/}.
+  \item Overleaf (2024) \textit{Learn LaTeX}. Available at: \url{https://www.overleaf.com/learn}.
+  \item StepStone (2024) \textit{Cloud Engineer Werkstudent positions, Germany}. Available at: \url{https://www.stepstone.de/}.
 \end{itemize}
 
 \end{document}

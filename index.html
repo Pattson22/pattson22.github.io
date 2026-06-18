@@ -74,14 +74,16 @@
           </div>
         </div>
 
-        <div class="hero-card reveal" data-testid="hero-terminal">
-          <div class="term-bar">
-            <span class="term-dot red"></span>
-            <span class="term-dot amber"></span>
-            <span class="term-dot green"></span>
-            <span class="term-title">patrick@cloud:~</span>
-          </div>
-          <pre class="term-body"><span class="t-prompt">$</span> whoami
+        <div class="hero-card-col">
+          <img src="assets/dp.jpg" alt="Patrick Thompson" class="hero-photo" data-testid="about-photo" />
+          <div class="hero-card reveal" data-testid="hero-terminal">
+            <div class="term-bar">
+              <span class="term-dot red"></span>
+              <span class="term-dot amber"></span>
+              <span class="term-dot green"></span>
+              <span class="term-title">patrick@cloud:~</span>
+            </div>
+            <pre class="term-body"><span class="t-prompt">$</span> whoami
 <span class="t-out">cloud_engineer --focus="IaC, automation, reliability"</span>
 <span class="t-prompt">$</span> terraform apply
 <span class="t-ok">Apply complete!</span> Resources: <span class="t-num">14</span> added, <span class="t-num">0</span> changed.
@@ -90,6 +92,7 @@
 <span class="t-prompt">$</span> ./deploy.sh --env prod
 <span class="t-ok">✓</span> build  <span class="t-ok">✓</span> test  <span class="t-ok">✓</span> push  <span class="t-ok">✓</span> deploy
 <span class="t-prompt">$</span> <span class="cursor">_</span></pre>
+          </div>
         </div>
       </div>
     </section>
@@ -286,6 +289,25 @@
           <a class="contact-btn" href="https://github.com/pattson22" target="_blank" rel="noopener" data-testid="contact-github"><i data-lucide="github"></i> github.com/pattson22</a>
           <a class="contact-btn" href="https://linkedin.com/in/patrick-thompson-abb9a3367/" target="_blank" rel="noopener" data-testid="contact-linkedin"><i data-lucide="linkedin"></i> LinkedIn</a>
         </div>
+
+        <form class="contact-form" id="contactForm" data-testid="contact-form">
+          <div class="form-row">
+            <label for="cf-name">Name</label>
+            <input type="text" id="cf-name" name="name" autocomplete="name" required data-testid="contact-form-name" />
+          </div>
+          <div class="form-row">
+            <label for="cf-email">Email</label>
+            <input type="email" id="cf-email" name="email" autocomplete="email" required data-testid="contact-form-email" />
+          </div>
+          <div class="form-row">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="5" required data-testid="contact-form-message"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" data-testid="contact-form-submit">
+            <i data-lucide="send"></i><span>Send Message</span>
+          </button>
+          <p class="form-note" id="contactFormNote" aria-live="polite"></p>
+        </form>
       </div>
     </section>
   </main>
