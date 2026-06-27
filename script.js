@@ -162,6 +162,23 @@
       console.warn("GitHub fetch failed:", err);
     });
 
+  /* ---------- Mobile menu ---------- */
+  const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+  const navLinks = document.querySelector(".nav-links");
+  if (mobileMenuBtn && navLinks) {
+    mobileMenuBtn.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+      mobileMenuBtn.setAttribute("aria-expanded", isOpen);
+      window.lucide && window.lucide.createIcons();
+    });
+    navLinks.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        mobileMenuBtn.setAttribute("aria-expanded", "false");
+      });
+    });
+  }
+
   /* ---------- Contact form ---------- */
   const contactForm = document.getElementById("contactForm");
   const contactNote = document.getElementById("contactFormNote");
@@ -183,10 +200,15 @@
         encodeURIComponent(subject) +
         "&body=" +
         encodeURIComponent(body);
-      window.location.href = mailto;
+      const a = document.createElement("a");
+      a.href = mailto;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
       contactNote.classList.remove("error");
       contactNote.textContent = "Opening your email client…";
       contactForm.reset();
+      setTimeout(function () { contactNote.textContent = ""; }, 5000);
     });
   }
 
