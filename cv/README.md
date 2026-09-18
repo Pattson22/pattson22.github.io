@@ -4,11 +4,11 @@ This CV was created using **LaTeX** via **Overleaf**.
 
 ## Files
 - `cv.tex` — LaTeX source
-- `cv.pdf` — compiled PDF (linked from the portfolio's "Download Resume" button)
+- `cv.pdf` — compiled PDF (LaTeX template; the portfolio links to `Patrick_Thompson_CV.pdf`)
 
 ## What it highlights
 - Cloud Engineering focus: AWS, Terraform, Docker, CI/CD
-- AWS Certified Solutions Architect – Associate
+- AWS Solutions Architect – Associate (in preparation)
 - Selected infrastructure projects with concrete outcomes
 - BSc Computer Science at GISMA University of Applied Sciences
 
