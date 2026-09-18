@@ -62,4 +62,4 @@ python3 -m http.server 8000
 ## Author
 **Patrick Thompson** — BSc Computer Science, GISMA University of Applied Sciences
 [github.com/pattson22](https://github.com/pattson22) ·
-[LinkedIn](https://linkedin.com/in/patrick-thompson-abb9a3367/)
+[LinkedIn](https://linkedin.com/in/patrick-thompson-fintech/)
