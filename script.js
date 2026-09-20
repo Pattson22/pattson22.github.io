@@ -46,13 +46,22 @@
   /* ---------- Navbar scroll state + back to top ---------- */
   const nav = document.querySelector(".nav");
   const toTop = document.getElementById("toTop");
-  function onScroll() {
-    const y = window.scrollY;
-    nav.classList.toggle("scrolled", y > 20);
-    toTop.classList.toggle("show", y > 600);
-  }
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  // Sentinels instead of a scroll listener: no work on every scroll frame.
+  const topSentinel = document.createElement("div");
+  topSentinel.style.cssText = "position:absolute;top:0;height:20px;width:1px;";
+  document.body.prepend(topSentinel);
+  new IntersectionObserver(
+    function (entries) { nav.classList.toggle("scrolled", !entries[0].isIntersecting); },
+    { threshold: 0 }
+  ).observe(topSentinel);
+
+  const deepSentinel = document.createElement("div");
+  deepSentinel.style.cssText = "position:absolute;top:600px;height:1px;width:1px;";
+  document.body.prepend(deepSentinel);
+  new IntersectionObserver(
+    function (entries) { toTop.classList.toggle("show", !entries[0].isIntersecting); },
+    { threshold: 0 }
+  ).observe(deepSentinel);
 
   /* ---------- Scroll reveal ---------- */
   const observer = new IntersectionObserver(
@@ -73,6 +82,7 @@
 
   /* ---------- Live GitHub repositories ---------- */
   const repoGrid = document.getElementById("repoGrid");
+  if (repoGrid) {
 
   function escapeHtml(str) {
     const div = document.createElement("div");
@@ -161,6 +171,8 @@
       window.lucide && window.lucide.createIcons();
       console.warn("GitHub fetch failed:", err);
     });
+
+  }
 
   /* ---------- Mobile menu ---------- */
   const mobileMenuBtn = document.getElementById("mobileMenuBtn");

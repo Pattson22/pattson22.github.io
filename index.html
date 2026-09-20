@@ -3,20 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Patrick Thompson — Software Developer · Fintech. Former bank branch manager, CS student in Berlin, building a German tax-filing platform (ELSTER). Python, TypeScript, AWS." />
+  <meta name="description" content="Patrick Thompson - Software Developer, Fintech. Former bank branch manager, CS student in Berlin, building a German tax-filing platform (ELSTER). Python, TypeScript, AWS." />
   <meta name="author" content="Patrick Thompson" />
-  <title>Patrick Thompson — Software Developer · Fintech</title>
+  <title>Patrick Thompson - Software Developer, Fintech</title>
   <link rel="canonical" href="https://pattson22.github.io/" />
 
   <meta property="og:type" content="profile" />
   <meta property="og:url" content="https://pattson22.github.io/" />
   <meta property="og:site_name" content="Patrick Thompson" />
-  <meta property="og:title" content="Patrick Thompson — Software Developer · Fintech" />
+  <meta property="og:title" content="Patrick Thompson - Software Developer, Fintech" />
   <meta property="og:description" content="Former bank branch manager, CS student in Berlin, building a German tax-filing platform (ELSTER). Python, TypeScript, AWS." />
   <meta property="og:image" content="https://pattson22.github.io/assets/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="627" />
-  <meta property="og:image:alt" content="Patrick Thompson — Software Developer · Fintech" />
+  <meta property="og:image:alt" content="Patrick Thompson - Software Developer, Fintech" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,25 +28,22 @@
 </head>
 <body>
   <div class="bg-grid" aria-hidden="true"></div>
-  <div class="bg-glow bg-glow-1" aria-hidden="true"></div>
-  <div class="bg-glow bg-glow-2" aria-hidden="true"></div>
-  <div class="bg-noise" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
 
   <header class="nav" data-testid="navbar">
     <a href="#hero" class="nav-brand" data-testid="nav-brand">
       <span class="brand-mark">PT</span>
-      <span class="brand-text">patrick<span class="accent">.cloud</span></span>
+      <span class="brand-text">Patrick Thompson</span>
     </a>
     <nav class="nav-links" data-testid="nav-links">
+      <a href="#work" data-testid="nav-projects">Work</a>
       <a href="#about" data-testid="nav-about">About</a>
-      <a href="#certs" data-testid="nav-certs">Certifications</a>
-      <a href="#projects" data-testid="nav-projects">Projects</a>
-      <a href="#exercises" data-testid="nav-exercises">Exercises</a>
+      <a href="#toolkit">Toolkit</a>
       <a href="#contact" data-testid="nav-contact">Contact</a>
     </nav>
     <div class="nav-actions">
       <a href="cv/Patrick_Thompson_CV.pdf" target="_blank" rel="noopener" class="btn btn-ghost btn-sm" data-testid="nav-resume-btn">
-        <i data-lucide="file-down"></i><span>Resume</span>
+        <i data-lucide="file-down"></i><span>CV</span>
       </a>
       <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" data-testid="theme-toggle">
         <i data-lucide="moon" class="icon-moon"></i>
@@ -60,311 +57,246 @@
   </header>
 
   <main>
+    <!-- HERO: asymmetric split, copy left, real imagery right -->
     <section id="hero" class="hero" data-testid="hero-section">
       <div class="hero-inner">
-        <div class="hero-copy reveal">
-          <div class="pill" data-testid="hero-availability">
-            <span class="dot"></span> Open to Working Student roles · Germany
-          </div>
-          <h1 class="hero-title">
-            Patrick Thompson
-            <span class="hero-role">Software Developer · Fintech</span>
-          </h1>
+        <div class="hero-copy">
+          <p class="pill" data-testid="hero-availability">Open to Werkstudent roles in Berlin</p>
+          <h1 class="hero-title">I build software where <span class="accent">money and code</span> meet.</h1>
           <p class="hero-sub">
-            Former <strong>bank branch manager</strong> (10+ years) turned developer.
-            I build fintech software with <strong>Python</strong>, <strong>TypeScript</strong>
-            and the cloud: a German tax-filing platform connected to <strong>ELSTER</strong>,
-            and a live mobile-money ordering app for a supermarket in Ghana.
+            Ten years in banking, most recently as a branch manager. Now a CS student in Berlin
+            building fintech products that have to be right.
           </p>
           <div class="hero-cta">
-            <a href="#projects" class="btn btn-primary" data-testid="hero-projects-btn">
-              <i data-lucide="layout-grid"></i><span>View Projects</span>
+            <a href="#work" class="btn btn-primary" data-testid="hero-projects-btn">
+              <i data-lucide="layout-grid"></i><span>View work</span>
             </a>
             <a href="cv/Patrick_Thompson_CV.pdf" target="_blank" rel="noopener" class="btn btn-outline" data-testid="hero-resume-btn">
-              <i data-lucide="download"></i><span>Download Resume</span>
+              <i data-lucide="download"></i><span>Download CV</span>
             </a>
-          </div>
-          <div class="hero-stack" data-testid="hero-stack">
-            <span>Python</span><span>TypeScript</span><span>FastAPI</span><span>Next.js</span>
-            <span>PostgreSQL</span><span>AWS</span><span>Terraform</span><span>Docker</span>
           </div>
         </div>
 
-        <div class="hero-card-col">
-          <img src="assets/dp.jpg" alt="Patrick Thompson" class="hero-photo" data-testid="about-photo" />
-          <div class="hero-card reveal" data-testid="hero-terminal">
-            <div class="term-bar">
-              <span class="term-dot red"></span>
-              <span class="term-dot amber"></span>
-              <span class="term-dot green"></span>
-              <span class="term-title">patrick@cloud:~</span>
-            </div>
-            <pre class="term-body"><span class="t-prompt">$</span> whoami
-<span class="t-out">developer --focus="fintech, correctness, automation"</span>
-<span class="t-prompt">$</span> terraform apply
-<span class="t-ok">Apply complete!</span> Resources: <span class="t-num">14</span> added, <span class="t-num">0</span> changed.
-<span class="t-prompt">$</span> aws sts get-caller-identity
-<span class="t-out">arn:aws:iam::****:user/patrick</span>
-<span class="t-prompt">$</span> ./deploy.sh --env prod
-<span class="t-ok">✓</span> build  <span class="t-ok">✓</span> test  <span class="t-ok">✓</span> push  <span class="t-ok">✓</span> deploy
-<span class="t-prompt">$</span> <span class="cursor">_</span></pre>
-          </div>
+        <div class="hero-media">
+          <img src="assets/project-taxengine.png" alt="TaxEngine.de, a German tax-filing platform built on ELSTER" class="hero-shot" width="1200" height="627" />
+          <img src="assets/dp.jpg" alt="Patrick Thompson" class="hero-photo" data-testid="about-photo" width="240" height="240" />
         </div>
       </div>
     </section>
 
-    <section id="about" class="section" data-testid="about-section">
-      <div class="section-head reveal">
-        <span class="kicker">01 — About</span>
-        <h2>From bank branch manager to software developer</h2>
+    <!-- FACTS: plain row, no cards -->
+    <section class="facts" aria-label="Key facts">
+      <div class="facts-inner">
+        <div class="fact"><b>10+ years</b><span>in banking, to branch manager</span></div>
+        <div class="fact"><b>486</b><span>automated tests in TaxEngine</span></div>
+        <div class="fact"><b>#1 branch</b><span>most profitable in the bank, 2021</span></div>
+        <div class="fact"><b>4 payment rails</b><span>mobile money and card, live in Ghana</span></div>
       </div>
-      <div class="about-grid">
-        <div class="about-text reveal">
+    </section>
+
+    <!-- WORK: one lead project, then a two-up, then compact list -->
+    <section id="work" class="section" data-testid="projects-section">
+      <div class="section-head reveal">
+        <span class="kicker">Selected work</span>
+        <h2>Products I shipped, and what they taught me</h2>
+      </div>
+
+      <article class="lead-project reveal" data-testid="project-taxengine">
+        <div class="lead-body">
+          <h3>TaxEngine.de</h3>
+          <p class="lead-role">Founder and developer, Berlin. Deployed, pre-launch.</p>
           <p>
-            I'm Patrick, a software developer and BSc Computer Science student at
-            <strong>GISMA University of Applied Sciences</strong> in Berlin. Before that I
-            spent over ten years at <strong>Agona Rural Bank</strong> in Ghana, from credit
-            officer to branch manager; in 2021 my branch was the most profitable in the bank.
-            Now I build the kind of software I used to rely on: <strong>payments, tax and
-            financial tools</strong> where the numbers have to be right.
+            A tax-filing platform for people living in Germany: enter income and deductions, see an
+            estimated refund, and file electronically with the Finanzamt through ELSTER. I obtained an
+            official ELSTER manufacturer ID and integrated the tax authority's certified ERiC library.
+            Every legal constant is traced to the statute and versioned per tax year.
           </p>
-          <p>
-            I work AI-assisted, with Claude Code as my pair programmer, and put the effort
-            where a banker would: <strong>automated tests</strong>, money held in integer
-            cents, <strong>CI-gated deploys</strong>, and documentation that explains why,
-            not just how. On the infrastructure side I use <strong>AWS, Terraform and
-            Docker</strong>, and I'm preparing for the AWS Solutions Architect exam.
-          </p>
-          <p>
-            Banking left me with strong instincts for <strong>credit risk, AML/CFT
-            compliance, and process discipline</strong> — habits that translate directly
-            into building financial software responsibly.
-          </p>
-          <a href="#contact" class="link-arrow" data-testid="about-contact-link">
-            Let's talk <i data-lucide="arrow-right"></i>
+          <ul class="tags">
+            <li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>Next.js</li><li>Stripe</li><li>Docker</li>
+          </ul>
+          <p class="learned">Money belongs in integer cents, and "CI is green" is only true once you have opened the run.</p>
+          <a class="link-arrow" href="https://meinetaxengine.de" target="_blank" rel="noopener">Visit meinetaxengine.de <i data-lucide="arrow-up-right"></i></a>
+        </div>
+      </article>
+
+      <div class="two-up">
+        <article class="project reveal" data-testid="project-benzic">
+          <img src="assets/project-benzic.png" alt="Benzic Ultimate, grocery ordering with mobile money" width="1200" height="627" loading="lazy" />
+          <div class="project-body">
+            <h3>Benzic Ultimate Supermarket</h3>
+            <p class="lead-role">Pro bono, for a family-run shop in Agona, Ghana. Live.</p>
+            <p>
+              Customers browse the catalogue, pick delivery or pickup slots and pay with MTN MoMo,
+              Telecel Cash, AT Money, card or cash on delivery through Paystack, with SMS order
+              updates. Staff and the owner run orders, stock and revenue from their own dashboards.
+            </p>
+            <ul class="tags"><li>Next.js</li><li>TypeScript</li><li>Paystack</li><li>SQLite</li><li>Railway</li></ul>
+            <p class="learned">Building for a real owner means designing for their staff, their payment methods and their internet, not mine.</p>
+            <a class="link-arrow" href="https://benzicultimate.com" target="_blank" rel="noopener">Visit benzicultimate.com <i data-lucide="arrow-up-right"></i></a>
+          </div>
+        </article>
+
+        <article class="project reveal" data-testid="project-crypto">
+          <img src="assets/project-crypto.png" alt="Highly available crypto price API on AWS" width="1200" height="627" loading="lazy" />
+          <div class="project-body">
+            <h3>Highly available crypto price API</h3>
+            <p class="lead-role">AWS and Terraform lab.</p>
+            <p>
+              A price API on AWS provisioned entirely with Terraform: an Application Load Balancer
+              spreading traffic across Availability Zones, Auto Scaling for load, and IAM roles and
+              secrets management keeping credentials out of the codebase.
+            </p>
+            <ul class="tags"><li>Terraform</li><li>AWS</li><li>Auto Scaling</li><li>IAM</li><li>Multi-AZ</li></ul>
+            <p class="learned">Designing for failure, so the service survives losing an entire Availability Zone.</p>
+            <a class="link-arrow" href="https://github.com/Pattson22/crypto-ticker-api" target="_blank" rel="noopener">View on GitHub <i data-lucide="arrow-up-right"></i></a>
+          </div>
+        </article>
+      </div>
+
+      <div class="more-work">
+        <h3 class="more-title">Also on the bench</h3>
+        <div class="more-grid">
+          <a class="mini reveal" href="https://github.com/Pattson22/Football-Match-Predictor" target="_blank" rel="noopener">
+            <h4>Football Match Predictor</h4>
+            <p>XGBoost on 35 features across 6 leagues, compared live with bookmaker odds. About 51% accuracy against a 33% baseline.</p>
+            <span class="mini-tags">Python · XGBoost · Flask</span>
+          </a>
+          <a class="mini reveal" href="https://github.com/Pattson22/mlops-api-infrastructure" target="_blank" rel="noopener">
+            <h4>MLOps API infrastructure</h4>
+            <p>A trained model packaged, served behind a REST endpoint and shipped through an automated container pipeline.</p>
+            <span class="mini-tags">AWS · Docker · REST</span>
+          </a>
+          <a class="mini reveal" href="https://github.com/Pattson22/CloudHub" target="_blank" rel="noopener">
+            <h4>CloudHub, multi-tier AWS <span class="wip">in progress</span></h4>
+            <p>Phase 1 done: the AWS network in Terraform, with a VPC, public and private subnets and least-privilege security groups.</p>
+            <span class="mini-tags">Terraform · VPC · Networking</span>
+          </a>
+          <a class="mini reveal" href="https://github.com/Pattson22/group-chat-app" target="_blank" rel="noopener">
+            <h4>Group chat application</h4>
+            <p>Real-time chat handling concurrent users and message state over WebSockets, with a clean client and server split.</p>
+            <span class="mini-tags">Python · WebSockets</span>
+          </a>
+          <a class="mini reveal" href="https://github.com/Pattson22/simple_shell" target="_blank" rel="noopener">
+            <h4>Simple shell in C</h4>
+            <p>A Unix command interpreter from scratch: parsing, PATH lookup, fork and exec, built-ins and environment handling.</p>
+            <span class="mini-tags">C · Linux · Systems</span>
           </a>
         </div>
+      </div>
+
+    </section>
+
+    <!-- ABOUT: prose with a supporting aside -->
+    <section id="about" class="section about" data-testid="about-section">
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <h2>From bank branch manager to software developer</h2>
+          <p>
+            I spent over ten years at Agona Rural Bank in Ghana, from credit officer to branch manager.
+            I owned budgets, forecasts and head-office reporting, made lending decisions from financial
+            statements, and kept a branch compliant with AML and CFT rules. In 2021 my branch was the
+            most profitable in the bank.
+          </p>
+          <p>
+            In 2025 I moved to Berlin and started a BSc in Computer Science at Gisma. Since then I build
+            the kind of software I used to rely on: payments, tax and financial tools where the numbers
+            have to be right. I work AI-assisted, with Claude Code as a pair programmer, and put the
+            effort where a banker would: automated tests, money in integer cents, CI-gated deploys and
+            documentation that explains why.
+          </p>
+          <a href="#contact" class="link-arrow" data-testid="about-contact-link">Get in touch <i data-lucide="arrow-right"></i></a>
+        </div>
         <aside class="about-facts reveal" data-testid="about-facts">
-          <div class="fact"><i data-lucide="graduation-cap"></i><div><strong>BSc Computer Science</strong><span>GISMA University of Applied Sciences</span></div></div>
-          <div class="fact"><i data-lucide="cloud"></i><div><strong>AWS Solutions Architect</strong><span>Associate — in preparation</span></div></div>
-          <div class="fact"><i data-lucide="map-pin"></i><div><strong>Based in Germany</strong><span>Open to Werkstudent roles</span></div></div>
-          <div class="fact"><i data-lucide="terminal"></i><div><strong>Focus</strong><span>Fintech · Backend · Cloud</span></div></div>
+          <div class="about-fact"><i data-lucide="graduation-cap"></i><div><b>BSc Computer Science</b><span>Gisma University of Applied Sciences, Berlin</span></div></div>
+          <div class="about-fact"><i data-lucide="cloud"></i><div><b>AWS Solutions Architect, Associate</b><span>In preparation, exam not yet taken</span></div></div>
+          <div class="about-fact"><i data-lucide="landmark"></i><div><b>Banking background</b><span>Credit risk, AML and CFT, remittances, reconciliation</span></div></div>
+          <div class="about-fact"><i data-lucide="languages"></i><div><b>Languages</b><span>English fluent, Akan (Twi) native, German A1 and learning</span></div></div>
         </aside>
       </div>
     </section>
 
-    <section id="certs" class="section" data-testid="certs-section">
+    <!-- TOOLKIT: grouped chunks, not one long list -->
+    <section id="toolkit" class="section" data-testid="toolkit-section">
       <div class="section-head reveal">
-        <span class="kicker">02 — Certifications</span>
-        <h2>What I'm working towards</h2>
+        <h2>Toolkit</h2>
       </div>
-      <div class="cert-grid">
-        <article class="cert-card cert-soon reveal" data-testid="cert-aws-saa">
-          <div class="cert-badge"><i data-lucide="hourglass"></i></div>
-          <div class="cert-body">
-            <div class="cert-row">
-              <h3>AWS Certified Solutions Architect – Associate</h3>
-              <span class="status-chip chip-muted">In Preparation</span>
-            </div>
-            <p class="cert-issuer">Amazon Web Services</p>
-            <p>Currently studying for the exam, which covers designing scalable, highly available, and fault-tolerant systems on AWS.</p>
-          </div>
-        </article>
-        <article class="cert-card cert-soon reveal" data-testid="cert-terraform">
-          <div class="cert-badge"><i data-lucide="hourglass"></i></div>
-          <div class="cert-body">
-            <div class="cert-row">
-              <h3>HashiCorp Terraform Associate</h3>
-              <span class="status-chip chip-muted">In Progress</span>
-            </div>
-            <p class="cert-issuer">HashiCorp</p>
-            <p>Currently studying toward validating Infrastructure as Code fundamentals and Terraform workflows.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="projects" class="section" data-testid="projects-section">
-      <div class="section-head reveal">
-        <span class="kicker">03 — Featured Projects</span>
-        <h2>Selected, curated, and explained</h2>
-        <p class="section-lead">Real products first, then the labs and coursework behind them.</p>
-      </div>
-
-      <div class="proj-grid" id="featuredGrid" data-testid="featured-projects-grid">
-        <article class="project-card featured-lg reveal" data-testid="project-taxengine">
-          <div class="proj-top">
-            <span class="proj-index">01</span>
-            <span class="proj-flag"><i data-lucide="star"></i> Flagship</span>
-          </div>
-          <h3>TaxEngine.de — Tax Filing for Germany</h3>
-          <p>A consumer tax-filing platform for people living in Germany: enter income and deductions, see an estimated refund, and file electronically with the Finanzamt through ELSTER. I obtained an official ELSTER manufacturer ID and integrated the tax authority's certified ERiC library. The tax engine covers wage, capital, rental and self-employment income, church tax, Soli and child allowances, with every legal constant traced to the statute and versioned per tax year. Deployed in the EU with CI-gated deploys; currently pre-launch.</p>
-          <div class="tags">
-            <span>Python</span><span>FastAPI</span><span>PostgreSQL</span><span>Next.js</span><span>TypeScript</span><span>Stripe</span><span>Docker</span><span>486 tests</span>
-          </div>
-          <p class="proj-learn"><i data-lucide="lightbulb"></i> <strong>What I learned:</strong> money belongs in integer cents, and "CI is green" is only true once you have checked a run.</p>
-          <a class="proj-link" href="https://meinetaxengine.de" target="_blank" rel="noopener" data-testid="taxengine-link">Visit meinetaxengine.de <i data-lucide="arrow-up-right"></i></a>
-        </article>
-
-        <article class="project-card featured-lg reveal" data-testid="project-benzic">
-          <div class="proj-top">
-            <span class="proj-index">02</span>
-            <span class="proj-flag flag-blue"><i data-lucide="shopping-cart"></i> Live</span>
-          </div>
-          <h3>Benzic Ultimate Supermarket — Grocery Ordering</h3>
-          <p>An online ordering system I built, pro bono, for a family-run supermarket in Agona, Ghana. Customers browse the catalogue, pick delivery or pickup slots, and pay with MTN MoMo, Telecel Cash, AT Money, card or cash on delivery via Paystack, with SMS order updates. Staff and the owner run orders, stock, CSV imports and revenue reports from their own dashboards. Automated daily off-site backups and an Android app build.</p>
-          <div class="tags">
-            <span>Next.js</span><span>TypeScript</span><span>SQLite</span><span>Tailwind</span><span>Paystack</span><span>Railway</span>
-          </div>
-          <p class="proj-learn"><i data-lucide="lightbulb"></i> <strong>What I learned:</strong> building for a real owner means designing for their staff, their payment methods and their internet, not mine.</p>
-          <a class="proj-link" href="https://benzicultimate.com" target="_blank" rel="noopener" data-testid="benzic-link">Visit benzicultimate.com <i data-lucide="arrow-up-right"></i></a>
-        </article>
-
-        <article class="project-card featured-lg reveal" data-testid="project-crypto-api">
-          <div class="proj-top">
-            <span class="proj-index">03</span>
-            <span class="proj-flag flag-blue"><i data-lucide="shield-check"></i> High Availability</span>
-          </div>
-          <h3>Highly Available Crypto API</h3>
-          <p>Built a resilient cryptocurrency price API on AWS, provisioned with Terraform and fronted by an Application Load Balancer spreading traffic across multiple Availability Zones. Auto Scaling keeps the service healthy under load, while IAM roles and secrets management keep credentials out of the codebase.</p>
-          <div class="proj-arch">
-            <img src="assets/crypto-api-architecture.svg" alt="Highly available Crypto API architecture diagram" loading="lazy" data-testid="crypto-architecture" />
-          </div>
-          <div class="tags">
-            <span>Terraform</span><span>AWS</span><span>ALB</span><span>Auto Scaling</span><span>IAM</span><span>Multi-AZ</span>
-          </div>
-          <p class="proj-learn"><i data-lucide="lightbulb"></i> <strong>What I learned:</strong> how to design for failure so the service survives the loss of an entire Availability Zone.</p>
-          <a class="proj-link" href="https://github.com/Pattson22/crypto-ticker-api" target="_blank" rel="noopener" data-testid="crypto-link">View on GitHub <i data-lucide="arrow-up-right"></i></a>
-        </article>
-
-        <article class="project-card reveal" data-testid="project-football">
-          <div class="proj-top"><span class="proj-index">04</span></div>
-          <h3>Football Match Predictor</h3>
-          <p>A machine-learning web app: an XGBoost model on 35 engineered features (Elo, form, odds, head-to-head) from 137 seasons across 6 European leagues, compared live against bookmaker odds to flag value bets. About 51% cross-validated accuracy on home/draw/away, against a 33% baseline.</p>
-          <div class="tags"><span>Python</span><span>XGBoost</span><span>scikit-learn</span><span>pandas</span><span>Flask</span></div>
-          <p class="proj-learn"><i data-lucide="lightbulb"></i> <strong>What I learned:</strong> feature engineering matters more than the model, and markets are hard to beat.</p>
-          <a class="proj-link" href="https://github.com/Pattson22/Football-Match-Predictor" target="_blank" rel="noopener" data-testid="football-link">View on GitHub <i data-lucide="arrow-up-right"></i></a>
-        </article>
-
-        <article class="project-card reveal" data-testid="project-mlops">
-          <div class="proj-top"><span class="proj-index">05</span></div>
-          <h3>MLOps API Infrastructure</h3>
-          <p>Deployed a machine-learning inference API with reproducible infrastructure and a container-based workflow. The project demonstrates how a trained model is packaged, served behind a REST endpoint, and shipped through an automated pipeline.</p>
-          <div class="tags"><span>AWS</span><span>Docker</span><span>Python</span><span>MLOps</span><span>REST API</span></div>
-          <p class="proj-learn"><i data-lucide="lightbulb"></i> <strong>What I learned:</strong> bridging the gap between data science artefacts and production-grade deployment.</p>
-          <a class="proj-link" href="https://github.com/Pattson22/mlops-api-infrastructure" target="_blank" rel="noopener" data-testid="mlops-link">View on GitHub <i data-lucide="arrow-up-right"></i></a>
-        </article>
-
-        <article class="project-card reveal" data-testid="project-cloudhub">
-          <div class="proj-top"><span class="proj-index">06</span><span class="proj-flag flag-blue"><i data-lucide="construction"></i> In progress</span></div>
-          <h3>CloudHub — Multi-tier AWS Application</h3>
-          <p>Phase 1 is done: the AWS network written in Terraform, with a VPC, public and private subnets, and least-privilege security groups. Next up are the containerised app tier (Docker), the database tier, and a GitHub Actions deploy pipeline.</p>
-          <div class="tags"><span>Terraform</span><span>AWS</span><span>VPC</span><span>Networking</span></div>
-          <p class="proj-learn"><i data-lucide="lightbulb"></i> <strong>What I learned:</strong> how to model a network as code so it can be torn down and rebuilt identically.</p>
-          <a class="proj-link" href="https://github.com/Pattson22/CloudHub" target="_blank" rel="noopener" data-testid="cloudhub-link">View on GitHub <i data-lucide="arrow-up-right"></i></a>
-        </article>
-
-        <article class="project-card reveal" data-testid="project-group-chat">
-          <div class="proj-top"><span class="proj-index">07</span></div>
-          <h3>Group Chat Application</h3>
-          <p>A full-stack real-time group chat application showing my application-development skills beyond pure infrastructure — handling concurrent users, message state, and a clean client/server architecture.</p>
-          <div class="tags"><span>Python</span><span>WebSockets</span><span>Full-stack</span><span>Sockets</span></div>
-          <p class="proj-learn"><i data-lucide="lightbulb"></i> <strong>What I learned:</strong> managing concurrency and real-time state across many connected clients.</p>
-          <a class="proj-link" href="https://github.com/Pattson22/group-chat-app" target="_blank" rel="noopener" data-testid="group-chat-link">View on GitHub <i data-lucide="arrow-up-right"></i></a>
-        </article>
-
-        <article class="project-card reveal" data-testid="project-simple-shell">
-          <div class="proj-top"><span class="proj-index">08</span></div>
-          <h3>Simple Shell (C)</h3>
-          <p>A Unix command-line interpreter written from scratch in C. Implements command parsing, the PATH lookup, process creation with fork/exec, built-ins, and environment handling — a deep dive into how Linux actually runs programs.</p>
-          <div class="tags"><span>C</span><span>Linux</span><span>OS Internals</span><span>Systems</span></div>
-          <p class="proj-learn"><i data-lucide="lightbulb"></i> <strong>What I learned:</strong> the mechanics of processes, system calls, and the shell that ties Linux together.</p>
-          <a class="proj-link" href="https://github.com/Pattson22/simple_shell" target="_blank" rel="noopener" data-testid="simple-shell-link">View on GitHub <i data-lucide="arrow-up-right"></i></a>
-        </article>
-      </div>
-
-      <div class="section-subhead reveal">
-        <h3><i data-lucide="github"></i> Live from GitHub</h3>
-        <p>Pulled automatically from my public repositories so this section never goes stale.</p>
-      </div>
-      <div class="repo-grid" id="repoGrid" data-testid="github-repos-grid">
-        <div class="repo-loading" data-testid="repos-loading">
-          <span class="spinner"></span> Fetching latest repositories…
+      <div class="toolkit-grid">
+        <div class="toolkit-col reveal">
+          <h3>Backend</h3>
+          <p>Python, FastAPI, Flask, PostgreSQL, SQLite, SQLAlchemy and Alembic, REST APIs, pytest</p>
+        </div>
+        <div class="toolkit-col reveal">
+          <h3>Frontend</h3>
+          <p>TypeScript, JavaScript, Next.js, React, Tailwind CSS, HTML and CSS</p>
+        </div>
+        <div class="toolkit-col reveal">
+          <h3>Cloud and DevOps</h3>
+          <p>AWS (EC2, VPC, IAM, ALB, Auto Scaling), Terraform, Docker, GitHub Actions, Railway</p>
+        </div>
+        <div class="toolkit-col reveal">
+          <h3>Fintech and data</h3>
+          <p>Stripe, Paystack and mobile money, ELSTER and ERiC, credit risk, AML and KYC, pandas, scikit-learn, XGBoost</p>
+        </div>
+        <div class="toolkit-col reveal">
+          <h3>Ways of working</h3>
+          <p>AI-assisted development with Claude Code, testing first, Git, written documentation</p>
+        </div>
+        <div class="toolkit-col reveal">
+          <h3>Currently learning</h3>
+          <p>AWS Solutions Architect Associate, Kubernetes, monitoring with Prometheus and Grafana, German</p>
         </div>
       </div>
     </section>
 
-    <section id="exercises" class="section" data-testid="exercises-section">
-      <div class="section-head reveal">
-        <span class="kicker">04 — Technical Exercises</span>
-        <h2>Fundamentals, demonstrated</h2>
-        <p class="section-lead">Small, focused demonstrations of the everyday skills cloud teams rely on — automation, scripting against AWS, and networking.</p>
-      </div>
-      <div class="exercise-grid">
-        <article class="exercise-card reveal" data-testid="exercise-bash">
-          <div class="ex-icon"><i data-lucide="square-terminal"></i></div>
-          <h3>Bash Automation</h3>
-          <p>A server bootstrap and health-check script — package setup, log rotation, disk and service checks, with clear logging and exit codes.</p>
-          <div class="tags"><span>Bash</span><span>Linux</span><span>Automation</span></div>
-          <a class="proj-link" href="exercises/bash-automation/README.md" target="_blank" rel="noopener" data-testid="exercise-bash-link">Read the exercise <i data-lucide="arrow-up-right"></i></a>
-        </article>
-        <article class="exercise-card reveal" data-testid="exercise-python">
-          <div class="ex-icon"><i data-lucide="file-code-2"></i></div>
-          <h3>Python + AWS (boto3)</h3>
-          <p>A boto3 script that audits an AWS account — listing EC2 instances and flagging S3 buckets without encryption or that are publicly accessible.</p>
-          <div class="tags"><span>Python</span><span>boto3</span><span>AWS</span><span>Security</span></div>
-          <a class="proj-link" href="exercises/python-aws/README.md" target="_blank" rel="noopener" data-testid="exercise-python-link">Read the exercise <i data-lucide="arrow-up-right"></i></a>
-        </article>
-        <article class="exercise-card reveal" data-testid="exercise-networking">
-          <div class="ex-icon"><i data-lucide="network"></i></div>
-          <h3>Networking & Linux</h3>
-          <p>A documented walkthrough of building a VPC: public/private subnets, route tables, an internet and NAT gateway, and least-privilege security groups.</p>
-          <div class="tags"><span>VPC</span><span>Subnets</span><span>Security Groups</span><span>Networking</span></div>
-          <a class="proj-link" href="exercises/networking/vpc-setup.md" target="_blank" rel="noopener" data-testid="exercise-networking-link">Read the exercise <i data-lucide="arrow-up-right"></i></a>
-        </article>
-      </div>
-    </section>
-
+    <!-- CONTACT -->
     <section id="contact" class="section contact" data-testid="contact-section">
-      <div class="contact-card reveal">
-        <span class="kicker">05 — Contact</span>
-        <h2>Let's build something reliable</h2>
-        <p>I'm actively looking for a working student role in software development, fintech or cloud in Germany. Whether it's about infrastructure, automation, or a potential collaboration — I'd love to hear from you.</p>
-        <div class="contact-links">
-          <a class="contact-btn" href="mailto:pattson22@gmail.com" data-testid="contact-email"><i data-lucide="mail"></i> pattson22@gmail.com</a>
-          <a class="contact-btn" href="https://github.com/pattson22" target="_blank" rel="noopener" data-testid="contact-github"><i data-lucide="github"></i> github.com/pattson22</a>
-          <a class="contact-btn" href="https://linkedin.com/in/patrick-thompson-fintech/" target="_blank" rel="noopener" data-testid="contact-linkedin"><i data-lucide="linkedin"></i> LinkedIn</a>
+      <div class="contact-grid">
+        <div class="contact-copy reveal">
+          <h2>Get in touch</h2>
+          <p>
+            I am looking for a Werkstudent role in software development or fintech in Berlin,
+            20 hours a week alongside my degree.
+          </p>
+          <ul class="contact-list">
+            <li><i data-lucide="mail"></i><a href="mailto:pattson22@gmail.com">pattson22@gmail.com</a></li>
+            <li><i data-lucide="linkedin"></i><a href="https://www.linkedin.com/in/patrick-thompson-fintech/" target="_blank" rel="noopener">linkedin.com/in/patrick-thompson-fintech</a></li>
+            <li><i data-lucide="github"></i><a href="https://github.com/Pattson22" target="_blank" rel="noopener">github.com/Pattson22</a></li>
+            <li><i data-lucide="map-pin"></i><span>Berlin, Germany</span></li>
+          </ul>
         </div>
 
-        <form class="contact-form" id="contactForm" data-testid="contact-form">
-          <div class="form-row">
+        <form id="contactForm" class="contact-form reveal" novalidate>
+          <div class="field">
             <label for="cf-name">Name</label>
-            <input type="text" id="cf-name" name="name" autocomplete="name" required data-testid="contact-form-name" />
+            <input id="cf-name" name="name" type="text" autocomplete="name" required />
           </div>
-          <div class="form-row">
+          <div class="field">
             <label for="cf-email">Email</label>
-            <input type="email" id="cf-email" name="email" autocomplete="email" required data-testid="contact-form-email" />
+            <input id="cf-email" name="email" type="email" autocomplete="email" required />
           </div>
-          <div class="form-row">
+          <div class="field">
             <label for="cf-message">Message</label>
-            <textarea id="cf-message" name="message" rows="5" required data-testid="contact-form-message"></textarea>
+            <textarea id="cf-message" name="message" rows="4" required></textarea>
           </div>
-          <button type="submit" class="btn btn-primary" data-testid="contact-form-submit">
-            <i data-lucide="send"></i><span>Send Message</span>
+          <button type="submit" class="btn btn-primary btn-block">
+            <i data-lucide="send"></i><span>Send message</span>
           </button>
-          <p class="form-note" id="contactFormNote" aria-live="polite"></p>
+          <p id="contactFormNote" class="form-note" role="status"></p>
         </form>
       </div>
     </section>
   </main>
 
-  <footer class="footer" data-testid="footer">
-    <p>© <span id="year"></span> Patrick Thompson — Software Developer · Fintech.</p>
-    <p class="footer-note">Built with HTML, CSS &amp; JavaScript · Hosted on GitHub Pages · B201 @ GISMA</p>
+  <footer class="footer">
+    <span>&copy; <span id="year">2026</span> Patrick Thompson</span>
+    <span>Built by hand. Berlin.</span>
   </footer>
 
-  <a href="#hero" class="to-top" id="toTop" aria-label="Back to top" data-testid="back-to-top"><i data-lucide="arrow-up"></i></a>
+  <button id="toTop" class="to-top" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
 
   <script src="script.js"></script>
+  <script>
+    if (window.lucide) { window.lucide.createIcons(); }
+  </script>
 </body>
 </html>
